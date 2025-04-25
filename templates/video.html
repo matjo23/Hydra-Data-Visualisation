@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Presentation - Craiglockhart War Hospital</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --highlight-color: #e74c3c;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            padding: 0;
+            margin: 0;
+            color: var(--dark-color);
+        }
+
+        .hero-section {
+            position: relative;
+            height: 50vh;
+            min-height: 300px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('/static/images/CWH2.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .custom-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2rem;
+            border: none;
+        }
+
+        .custom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header-custom {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            font-weight: 600;
+            border-bottom: none;
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        .nav-tabs {
+            border-bottom: none;
+            background-color: white;
+            border-radius: 50px;
+            padding: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-link {
+            color: var(--dark-color);
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            margin: 0 0.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: #f8f9fa;
+            color: var(--accent-color);
+        }
+
+        .nav-link.active {
+            background-color: var(--accent-color) !important;
+            color: white !important;
+            border: none;
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+        }
+
+        .video-container {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-selection {
+            margin-bottom: 20px;
+        }
+
+        .date-badge {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .form-select {
+            border-radius: 50px;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid #ced4da;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            font-weight: 500;
+        }
+
+        .form-select:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+        }
+
+        .form-label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section with Background Image -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Video Presentation</h1>
+            <p class="hero-subtitle">Analysis of patient data at Craiglockhart War Hospital</p>
+            <div class="date-badge">1916-1919</div>
+        </div>
+    </div>
+
+    <div class="container main-content">
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-tabs mb-5 justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" href="/"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/sankey"><i class="fas fa-project-diagram"></i> Sankey Diagram</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/video"><i class="fas fa-video"></i> Video Presentation</a>
+            </li>
+        </ul>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="custom-card">
+                    <div class="card-header-custom">
+                        <h2><i class="fas fa-video"></i> Video Analysis & Presentation</h2>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead">
+                            Watch this motion-graphic presentation for an in-depth analysis of the historical medical data collected at the Craiglockhart War Hospital during World War I, providing detailed insights.
+                        </p>
+
+                        {% if video_files %}
+                            {% if video_files|length > 1 %}
+                            <div class="video-selection">
+                                <label for="videoSelect" class="form-label"><i class="fas fa-film"></i> Select a video:</label>
+                                <select class="form-select" id="videoSelect" onchange="changeVideo(this.value)">
+                                    {% for video in video_files %}
+                                    <option value="{{ video }}">{{ video }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            {% endif %}
+
+                            <div class="video-container">
+                                <video id="videoPlayer" controls>
+                                    <source src="{{ url_for('serve_video', filename=video_files[0]) }}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+
+                            <div class="mt-4">
+                                <h4><i class="fas fa-info-circle"></i> About This Presentation</h4>
+                                <p>
+                                    This video explores the historical significance of Craiglockhart War Hospital's approach to treating shell shock and other diagnosis during World War I. The analysis examines patient data, treatment methodologies, and outcomes documented during this pioneering period of military psychiatry.
+                                </p>
+                                <p>
+                                    The presentation complements the sankey diagrams visualisation by providing context and deeper insights into the patterns displayed in the visual data.
+                                </p>
+                            </div>
+                        {% else %}
+                            <div class="alert alert-info">
+                                <i class="fas fa-info-circle"></i> No videos found. Please upload an MP4 file to the 'static/videos' directory.
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>© 2025 Hydra Data Visualization Project</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function changeVideo(filename) {
+            const videoPlayer = document.getElementById('videoPlayer');
+            const videoSource = videoPlayer.querySelector('source');
+            videoSource.src = "{{ url_for('serve_video', filename='') }}" + filename;
+            videoPlayer.load();
+            videoPlayer.play();
+        }
+    </script>
+</body>
+</html>

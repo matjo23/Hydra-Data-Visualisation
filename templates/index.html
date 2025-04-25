@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craiglockhart War Hospital Hydra Visualisation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --highlight-color: #e74c3c;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            padding: 0;
+            margin: 0;
+            color: var(--dark-color);
+        }
+
+        .hero-section {
+            position: relative;
+            height: 50vh;
+            min-height: 300px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('/static/images/CWH.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .custom-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2rem;
+            border: none;
+        }
+
+        .custom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header-custom {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            font-weight: 600;
+            border-bottom: none;
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        .nav-tabs {
+            border-bottom: none;
+            background-color: white;
+            border-radius: 50px;
+            padding: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-link {
+            color: var(--dark-color);
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            margin: 0 0.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: #f8f9fa;
+            color: var(--accent-color);
+        }
+
+        .nav-link.active {
+            background-color: var(--accent-color) !important;
+            color: white !important;
+            border: none;
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+        }
+
+        .feature-item {
+            padding: 1.5rem;
+            border-radius: 8px;
+            background-color: rgba(236, 240, 241, 0.5);
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .feature-item:hover {
+            transform: translateX(5px);
+        }
+
+        .feature-item i {
+            color: var(--accent-color);
+            margin-right: 0.5rem;
+        }
+
+        .feature-title {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .date-badge {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section with Background Image -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Craiglockhart War Hospital</h1>
+            <p class="hero-subtitle">Exploring historical medical data through interactive visualisations</p>
+            <div class="date-badge">1916-1919</div>
+        </div>
+    </div>
+
+    <div class="container main-content">
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-tabs mb-5 justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active" href="/"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/sankey"><i class="fas fa-project-diagram"></i> Sankey Diagram</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/video"><i class="fas fa-video"></i> Video Presentation</a>
+            </li>
+        </ul>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="custom-card">
+                    <div class="card-header-custom">
+                        <h2><i class="fas fa-info-circle"></i> Hydra Data Visualisation Project</h2>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead">
+                            Welcome to the Craiglockhart War Hospital data visualisation portal. This interactive dashboard provides insights into historical medical records from 1916 to 1919, documenting the soldiers and officers who received treatment during World War I.
+                        </p>
+
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <div class="feature-item">
+                                    <h4 class="feature-title"><i class="fas fa-project-diagram"></i> Sankey Diagram</h4>
+                                    <p>Explore the complex relationships between patient demographics, diagnoses, treatment duration, and outcomes through an interactive Sankey diagram visualisation.</p>
+                                    <a href="/sankey" class="btn btn-outline-primary">View Diagram</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-item">
+                                    <h4 class="feature-title"><i class="fas fa-video"></i> Video Presentation</h4>
+                                    <p>Watch our comprehensive analysis of the historical medical data, including key findings, patterns, and historical context of the Craiglockhart War Hospital.</p>
+                                    <a href="/video" class="btn btn-outline-primary">Watch Video</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-5">
+                            <h4><i class="fas fa-history"></i> Historical Context</h4>
+                            <p>
+                                Craiglockhart War Hospital was a British military psychiatric hospital for officers during World War I. Located in Edinburgh, Scotland, it treated soldiers suffering from shell shock/neurasthenia (now known as PTSD) and other psychological trauma from combat.
+                            </p>
+                            <p>
+                                This visualization project provides insights into treatment methodologies, patient demographics, and recovery outcomes during this critical period in medical history.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>© 2025 Hydra Data Visualisation Project</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
